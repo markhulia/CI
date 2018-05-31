@@ -1,29 +1,3 @@
-pipeline {
-    agent any
-    
-    stages {
-	stage('Download changes') {
-	    steps {
-		echo 'Pulling changes'
-	   }
-	}	    
-        stage('Build') {
-            steps {
-                echo 'Building..'
-            }
-        }
-        stage('Test') {
-            steps {
-                echo 'Testing..'
-            }
-        }
-        stage('Deploy') {
-            steps {
-                echo 'Deploying....'
-            }
-        }
-    }
-}
 Date date = new Date()
 env.MP_PART_NUMBER = date.format("yyMMdd") + "00" + "NIG"
 env.ENABLE_AUTO_FLASHING = 1
